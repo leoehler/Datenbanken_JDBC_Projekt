@@ -4,6 +4,7 @@ import JDBC.Type;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class JDBC {
 
@@ -23,6 +24,7 @@ public class JDBC {
 
     public static void main(String[] args) {
         try {
+            Locale.setDefault(Locale.US);
             Connection connection = getConnection();
             createSchema(connection, "eSportsTeam");
             createTables(connection);

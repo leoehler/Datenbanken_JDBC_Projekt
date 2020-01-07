@@ -1,18 +1,16 @@
-import java.util.Date;
+public abstract class Person{
 
-public class Person implements IInsertableObject{
+    protected int SSN;
+    protected String vorname;
+    protected String nachname;
+    protected String gebDatum;
+    protected int adresse;
+    protected double gehalt;
+    protected int urlaubstage;
+    protected String vertragsBeginn;
+    protected String vertragsEnde;
 
-    private int SSN;
-    private String vorname;
-    private String nachname;
-    private Date gebDatum;
-    private int adresse;
-    private double gehalt;
-    private int urlaubstage;
-    private Date vertragsBeginn;
-    private Date vertragsEnde;
-
-    public Person(int SSN, String vorname, String nachname, Date gebDatum, int adresse, double gehalt, int urlaubstage, Date vertragsBeginn, Date vertragsEnde) {
+    public Person(int SSN, String vorname, String nachname, String gebDatum, int adresse, double gehalt, int urlaubstage, String vertragsBeginn, String vertragsEnde) {
         this.SSN = SSN;
         this.vorname = vorname;
         this.nachname = nachname;
@@ -48,11 +46,11 @@ public class Person implements IInsertableObject{
         this.nachname = nachname;
     }
 
-    public Date getGebDatum() {
+    public String getGebDatum() {
         return gebDatum;
     }
 
-    public void setGebDatum(Date gebDatum) {
+    public void setGebDatum(String gebDatum) {
         this.gebDatum = gebDatum;
     }
 
@@ -80,24 +78,19 @@ public class Person implements IInsertableObject{
         this.urlaubstage = urlaubstage;
     }
 
-    public Date getVertragsBeginn() {
+    public String getVertragsBeginn() {
         return vertragsBeginn;
     }
 
-    public void setVertragsBeginn(Date vertragsBeginn) {
+    public void setVertragsBeginn(String vertragsBeginn) {
         this.vertragsBeginn = vertragsBeginn;
     }
 
-    public Date getVertragsEnde() {
+    public String getVertragsEnde() {
         return vertragsEnde;
     }
 
-    public void setVertragsEnde(Date vertragsEnde) {
+    public void setVertragsEnde(String vertragsEnde) {
         this.vertragsEnde = vertragsEnde;
-    }
-
-    @Override
-    public String insertStatement() {
-        return null;
     }
 }

@@ -1,5 +1,3 @@
-import java.util.Date;
-
 public class Spieler extends Person implements IInsertableObject{
 
     private String spiel;
@@ -9,7 +7,7 @@ public class Spieler extends Person implements IInsertableObject{
     private String teamName;
     private String hausName;
 
-    public Spieler(int SSN, String vorname, String nachname, Date gebDatum, int adresse, double gehalt, int urlaubstage, Date vertragsBeginn, Date vertragsEnde, String spiel, String facebook, String instagram, String twitter, String teamName, String hausName) {
+    public Spieler(int SSN, String vorname, String nachname, String gebDatum, int adresse, double gehalt, int urlaubstage, String vertragsBeginn, String vertragsEnde, String spiel, String facebook, String instagram, String twitter, String teamName, String hausName) {
         super(SSN, vorname, nachname, gebDatum, adresse, gehalt, urlaubstage, vertragsBeginn, vertragsEnde);
         this.spiel = spiel;
         this.facebook = facebook;
@@ -69,7 +67,6 @@ public class Spieler extends Person implements IInsertableObject{
 
     @Override
     public String insertStatement() {
-        return null;
-        //return String.format("INSERT INTO SPIELER VALUES (%d, '%s', %d, %d, '%s');", ID, strasse, hausnummer, plz, ort);
+        return String.format("INSERT INTO SPIELER VALUES (%d, '%s', '%s', '%s', %d, %.2f, %d, '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');", SSN, vorname, nachname, gebDatum, adresse, gehalt, urlaubstage, vertragsBeginn, vertragsEnde, spiel, facebook, instagram, twitter, teamName, hausName);
     }
 }
