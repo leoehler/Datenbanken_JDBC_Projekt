@@ -13,12 +13,12 @@ public class Filler extends ArrayList<IInsertableObject> {
         fillIT();
         fillMarketing();
         fillSales();
-        fillSoloTurnier();
         fillSpiel();
+        fillSoloTurnier();
+        fillTeam();
         fillSpieler();
         fillSpielerSoloturnierTeilnahme();
         fillSponsor();
-        fillTeam();
         fillTeamsponsor();
         fillTeamTurnier();
         fillTestspiel();

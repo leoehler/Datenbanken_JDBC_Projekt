@@ -34,6 +34,8 @@ public class JDBC {
                 insertInto(connection, io);
             }
 
+            //createForeignKeys(connection);
+
             connection.close();
         } catch (SQLException e) {
             System.out.println("Fehlermeldung: " + e.getMessage());
@@ -238,12 +240,84 @@ public class JDBC {
         System.out.println(sqlStatement);
         updateStatement(connection, sqlStatement);
 
-        /*
-        ForeignKey fk_1 = new ForeignKey("ADRESSE", Type.INTEGER, table_adresse , table_adresse.getAttribute("ID"), false);
-        sqlStatement = table_person.addConstraint("ADRESSE__ADRESSE_ID",fk_1, Option.SETNULL, Option.CASCADE);
+
+        //Constraints
+
+        //COACH
+        ForeignKey fk_coach = new ForeignKey("ADRESSE", Type.INTEGER, table_adresse , table_adresse.getAttribute("ID"), false);
+        sqlStatement = table_coach.addConstraint("COACH_ADRESSE__ADRESSE_ID", fk_coach, Option.SETNULL, Option.CASCADE);
         System.out.println(sqlStatement);
         updateStatement(connection, sqlStatement);
-        */
+
+        //HAUS
+        ForeignKey fk_haus = new ForeignKey("ADRESSID", Type.INTEGER, table_adresse , table_adresse.getAttribute("ID"), false);
+        sqlStatement = table_haus.addConstraint("HAUS_ADRESSID__ADRESSE_ID", fk_haus, Option.SETNULL, Option.CASCADE);
+        System.out.println(sqlStatement);
+        updateStatement(connection, sqlStatement);
+
+        //IT
+        ForeignKey fk_IT = new ForeignKey("ADRESSE", Type.INTEGER, table_adresse , table_adresse.getAttribute("ID"), false);
+        sqlStatement = table_IT.addConstraint("IT_ADRESSE__ADRESSE_ID", fk_IT, Option.SETNULL, Option.CASCADE);
+        System.out.println(sqlStatement);
+        updateStatement(connection, sqlStatement);
+
+        //MARKETING
+        ForeignKey fk_marketing = new ForeignKey("ADRESSE", Type.INTEGER, table_adresse , table_adresse.getAttribute("ID"), false);
+        sqlStatement = table_marketing.addConstraint("MARKETING_ADRESSE__ADRESSE_ID", fk_marketing, Option.SETNULL, Option.CASCADE);
+        System.out.println(sqlStatement);
+        updateStatement(connection, sqlStatement);
+
+        //SALES
+        ForeignKey fk_sales = new ForeignKey("ADRESSE", Type.INTEGER, table_adresse , table_adresse.getAttribute("ID"), false);
+        sqlStatement = table_sales.addConstraint("SALES_ADRESSE__ADRESSE_ID", fk_sales, Option.SETNULL, Option.CASCADE);
+        System.out.println(sqlStatement);
+        updateStatement(connection, sqlStatement);
+
+        //SOLOTURNIER
+        ForeignKey fk_soloturnier = new ForeignKey("SPIEL", Type.VARCHAR, table_spiel , table_spiel.getAttribute("NAME"), false);
+        sqlStatement = table_soloturnier.addConstraint("SOLOTURNIER_SPIEL__SPIEL_NAME", fk_soloturnier, Option.RESTRICT, Option.CASCADE);
+        System.out.println(sqlStatement);
+        updateStatement(connection, sqlStatement);
+
+        //SPIELER
+        ForeignKey fk_spieler_1 = new ForeignKey("ADRESSE", Type.INTEGER, table_adresse , table_adresse.getAttribute("ID"), false);
+        sqlStatement = table_spieler.addConstraint("SPIELER_ADRESSE__ADRESSE_ID", fk_spieler_1, Option.SETNULL, Option.CASCADE);
+        System.out.println(sqlStatement);
+        updateStatement(connection, sqlStatement);
+
+        ForeignKey fk_spieler_2 = new ForeignKey("TEAMNAME", Type.VARCHAR, table_team , table_team.getAttribute("TEAMNAME"), false);
+        sqlStatement = table_spieler.addConstraint("SPIELER_TEAMNAME__TEAM_TEAMNAME", fk_spieler_2, Option.RESTRICT, Option.CASCADE);
+        System.out.println(sqlStatement);
+        updateStatement(connection, sqlStatement);
+
+        ForeignKey fk_spieler_3 = new ForeignKey("HAUSNAME", Type.VARCHAR, table_haus , table_haus.getAttribute("HAUSNAME"), false);
+        sqlStatement = table_spieler.addConstraint("SPIELER_HAUSNAME__HAUS_HAUSNAME", fk_spieler_3, Option.SETNULL, Option.CASCADE);
+        System.out.println(sqlStatement);
+        updateStatement(connection, sqlStatement);
+
+        //SPIELER_SOLOTURNIER_TEILNAHME
+        ForeignKey fk_SSTT = new ForeignKey("SPIELERSSN", Type.INTEGER, table_spieler , table_spieler.getAttribute("SSN"), false);
+        sqlStatement = table_spielerSoloTurnierTeilnahme.addConstraint("SSTT_SPIELERSSN__SPIELER_SSN", fk_SSTT, Option.RESTRICT, Option.CASCADE);
+        System.out.println(sqlStatement);
+        updateStatement(connection, sqlStatement);
+
+        ForeignKey fk_SSTT_2 = new ForeignKey("SOLOTURNIERNAME", Type.VARCHAR, table_soloturnier , table_soloturnier.getAttribute("NAME"), false);
+        sqlStatement = table_spielerSoloTurnierTeilnahme.addConstraint("SSTT_SOLOTURNIERNAME__SOLOTURNIER_NAME", fk_SSTT_2, Option.RESTRICT, Option.CASCADE);
+        System.out.println(sqlStatement);
+        updateStatement(connection, sqlStatement);
+
+        //SPONSOR
+
+        //TEAM
+
+        //TEAMSPONSOR
+
+        //TEAMTURNIER
+
+        //TESTSPIEL
+
+        //URLAUB
+
     }
 
     private static void createSchema(Connection connection, String schemaName) throws SQLException {
