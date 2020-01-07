@@ -138,8 +138,8 @@ public class JDBC {
         Table table_testspiel = new Table("TESTSPIEL")
                 .addPrimaryKey("SPIELERSSN_1", Type.INTEGER)
                 .addPrimaryKey("SPIELERSSN_2", Type.INTEGER)
-                .addAttr("DATUM", Type.DATE)
-                .addAttr("UHRZEIT", Type.VARCHAR)
+                .addPrimaryKey("DATUM", Type.DATE)
+                .addPrimaryKey("UHRZEIT", Type.VARCHAR)
                 .addAttr("ERGEBNIS", Type.VARCHAR);
         sqlStatement = table_testspiel.create();
         System.out.println(sqlStatement);
