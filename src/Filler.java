@@ -82,8 +82,8 @@ public class Filler extends ArrayList<IInsertableObject> {
 
     public void fillSpieler(){
         add(new Spieler(133717733, "Bruce", "Allmighty", "2000-12-24", 9, 12000, 0, "2018-12-24", "2020-12-24","Tekken", "facebook.com/brucylucy", "instagram.com/brucylucy", "twitter.com/brucylucy", "TekkenESports", "Tempel der Liebe"));
-        add(new Spieler(848395732, "Walter", "White", "1989-08-24", 9, 25000, 12, "2017-06-01", "2020-06-01","League of Legends", "facebook.com/whitymighty", "instagram.com/whitymighty", "twitter.com/whitymighty", "BadBreakers", "The Vat"));
-        add(new Spieler(124839304, "Jesse", "Pinkman", "1990-07-24", 8, 8000, 8, "2017-06-01", "2021-06-01","League of Legends", "facebook.com/bluelove", "instagram.com/bluelove", "twitter.com/bluelove", "BadBreakers", "The Vat"));
+        add(new Spieler(848395732, "Walter", "White", "1989-08-24", 9, 25000, 12, "2017-06-01", "2020-06-01","League of Legends", "facebook.com/whitymighty", "instagram.com/whitymighty", "twitter.com/whitymighty", "Bad Breakers", "The Vat"));
+        add(new Spieler(124839304, "Jesse", "Pinkman", "1990-07-24", 8, 8000, 8, "2017-06-01", "2021-06-01","League of Legends", "facebook.com/bluelove", "instagram.com/bluelove", "twitter.com/bluelove", "Bad Breakers", "The Vat"));
         add(new Spieler(991436723, "Saul", "Goodman", "1991-02-24", 8, 8500, 10, "2017-06-01", "2022-06-01","Call of Duty", "facebook.com/bettercallsaul", "instagram.com/bettercallsaul", "twitter.com/bettercallsaul", "The Ringers", "the Vat"));
     }
 
@@ -101,13 +101,13 @@ public class Filler extends ArrayList<IInsertableObject> {
 
     public void fillTeam(){
         add(new Team("TekkenESports", "Tekken", 123456789));
-        add(new Team("BadBreakers", "League of Legends", 223344556));
+        add(new Team("Bad Breakers", "League of Legends", 223344556));
         add(new Team("The Ringers", "Call of Duty", 209445774));
     }
 
     public void fillTeamsponsor(){
         add(new Teamsponsor("TekkenESports", "Monster", 70000, "2018-01-01","2019-01-01"));
-        add(new Teamsponsor("BadBreakers", "Red Bull", 90000, "2020-01-01", "2022-01-01"));
+        add(new Teamsponsor("Bad Breakers", "Red Bull", 90000, "2020-01-01", "2022-01-01"));
         add(new Teamsponsor("The Ringers", "Grevensteiner", 10000, "2020-06-01", "2021-06-01"));
     }
 

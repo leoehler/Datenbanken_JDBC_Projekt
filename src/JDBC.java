@@ -34,8 +34,6 @@ public class JDBC {
                 insertInto(connection, io);
             }
 
-            //createForeignKeys(connection);
-
             connection.close();
         } catch (SQLException e) {
             System.out.println("Fehlermeldung: " + e.getMessage());
@@ -340,11 +338,10 @@ public class JDBC {
         System.out.println(sqlStatement);
         updateStatement(connection, sqlStatement);
 
-        /*
         ForeignKey fk_teamturnier_2 = new ForeignKey("TEAMNAME", Type.VARCHAR, table_team , table_team.getAttribute("TEAMNAME"), false);
         sqlStatement = table_teamturnier.addConstraint("TEAMTURNIER_TEAMNAME__TEAM_TEAMNAME", fk_teamturnier_2, Option.RESTRICT, Option.CASCADE);
         System.out.println(sqlStatement);
-        updateStatement(connection, sqlStatement);*/
+        updateStatement(connection, sqlStatement);
 
         //TESTSPIEL
         ForeignKey fk_testspiel = new ForeignKey("SPIELERSSN_1", Type.INTEGER, table_spieler , table_spieler.getAttribute("SSN"), false);
