@@ -20,8 +20,8 @@ public class Filler extends ArrayList<IInsertableObject> {
         fillSpielerSoloturnierTeilnahme();
         fillSponsor();
         fillTeamsponsor();
-        fillTeamTurnier();
         fillTestspiel();
+        fillTeamTurnier();
         fillUrlaub();
     }
 
@@ -108,12 +108,12 @@ public class Filler extends ArrayList<IInsertableObject> {
     public void fillTeamsponsor(){
         add(new Teamsponsor("TekkenESports", "Monster", 70000, "2018-01-01","2019-01-01"));
         add(new Teamsponsor("BadBreakers", "Red Bull", 90000, "2020-01-01", "2022-01-01"));
-        add(new Teamsponsor("The Ringers", "Call of Duty", 10000, "2020-06-01", "2021-06-01"));
+        add(new Teamsponsor("The Ringers", "Grevensteiner", 10000, "2020-06-01", "2021-06-01"));
     }
 
     public void fillTeamTurnier(){
         add(new TeamTurnier("Dreamhack Summer 17", "League of Legends",10000, "2017-06-10", 4, "Bad Breakers"));
-        add(new TeamTurnier("Dreamhack Summer 18", "League of Legends", 30000, "2018-06-10", 2, "Bad Breakers"));
+        add(new TeamTurnier("Dreamhack Summer 18", "League of Legends",30000, "2018-06-10", 2, "Bad Breakers"));
         add(new TeamTurnier("Dreamhack Summer 18", "Call of Duty", 8000, "2018-06-12", 5, "The Ringers"));
     }
 
